@@ -1,0 +1,205 @@
+.container {
+  padding: 30px;
+  background: #f4f6f9;
+  min-height: 100vh;
+}
+
+.container h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+/* SEARCH BAR */
+.searchForm {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.searchForm input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+}
+
+.searchForm button {
+  padding: 12px 18px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.searchForm button:hover {
+  background: #0056b3;
+}
+
+/* ADD BUTTON */
+.container > button {
+  padding: 12px 18px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.container > button:hover {
+  background: #1e7e34;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+/* CARD */
+.card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* IMAGE */
+.image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* TEXT */
+.card h3 {
+  font-size: 18px;
+  margin: 10px 15px 5px;
+  color: #333;
+}
+
+.card p {
+  margin: 0 15px 10px;
+  color: #666;
+  font-size: 14px;
+}
+
+/* PDF BUTTON */
+.pdfBtn {
+  display: inline-block;
+  margin: 0 15px 10px;
+  padding: 8px 12px;
+  background: #ff9800;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.pdfBtn:hover {
+  background: #e68900;
+}
+
+/* ACTION BUTTONS */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px 15px;
+  gap: 10px;
+}
+
+.actions button {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.actions button:first-child {
+  background: #ffc107;
+  color: #000;
+}
+
+.actions button:first-child:hover {
+  background: #e0a800;
+}
+
+.actions button:last-child {
+  background: #dc3545;
+  color: white;
+}
+
+.actions button:last-child:hover {
+  background: #b52a37;
+}
+
+/* EDIT MODE */
+.editBox {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.editBox input,
+.editBox textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+}
+
+.editBox textarea {
+  min-height: 80px;
+  resize: none;
+}
+
+/* EDIT ACTIONS */
+.editActions {
+  display: flex;
+  gap: 10px;
+}
+
+.editActions button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.editActions button:first-child {
+  background: #28a745;
+  color: white;
+}
+
+.editActions button:last-child {
+  background: #6c757d;
+  color: white;
+}
+
+.editActions button:hover {
+  opacity: 0.9;
+}

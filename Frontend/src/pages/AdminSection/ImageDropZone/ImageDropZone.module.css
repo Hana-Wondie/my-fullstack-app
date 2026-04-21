@@ -1,0 +1,44 @@
+.dropzone {
+  border: 2px dashed #bbb;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  background: #fafafa;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+}
+
+.dropzone input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.active {
+  border-color: #ff9900;
+  background: #fff7e6;
+}
+
+.preview {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.button {
+  margin-top: 10px;
+  background: #ff9900;
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.button:hover {
+  background: #e68a00;
+}

@@ -1,0 +1,70 @@
+/* ===== Container ===== */
+.container {
+  padding: 50px 20px;
+  background-color: #f3f3f3;
+  text-align: center;
+}
+
+/* ===== Title ===== */
+.title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-weight: bold;
+  color: #131921;
+}
+
+/* ===== Stats Grid ===== */
+.statsGrid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* ===== Card ===== */
+.card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px 20px;
+  width: 200px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ===== Icon ===== */
+.icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #ff9900; /* Amazon-style */
+}
+
+/* ===== Number ===== */
+.number {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #131921;
+  margin-bottom: 5px;
+}
+
+/* ===== Label ===== */
+.label {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 768px) {
+  .statsGrid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 80%;
+  }
+}

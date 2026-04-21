@@ -1,0 +1,110 @@
+.container {
+  padding: 30px;
+  background: #f1f5f9;
+  min-height: 100vh;
+}
+
+.title {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* SEARCH */
+.searchForm {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.searchForm input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.searchForm button {
+  padding: 10px 15px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
+
+/* TOP ACTIONS */
+.topActions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.topActions button {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: #6366f1;
+  color: white;
+}
+
+/* TABLE */
+.table {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.header,
+.row {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 2fr;
+  padding: 12px;
+}
+
+.header {
+  background: #f8fafc;
+  font-weight: bold;
+}
+
+.row:hover {
+  background: #f1f5f9;
+}
+
+/* STATUS */
+.active {
+  color: green;
+}
+
+.blocked {
+  color: red;
+}
+
+/* ACTIONS */
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.deleteBtn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.blockBtn {
+  background: orange;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.unblockBtn {
+  background: green;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+}

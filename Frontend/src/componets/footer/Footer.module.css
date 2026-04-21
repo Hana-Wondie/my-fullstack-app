@@ -1,0 +1,138 @@
+/* ===== Footer ===== */
+.footer {
+  background: linear-gradient(to right, #131921, #232f3e);
+  color: white;
+  margin-top: 60px;
+}
+
+/* ===== Container ===== */
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 50px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* ===== Section ===== */
+.section {
+  flex: 1;
+  min-width: 220px;
+}
+
+/* ===== Logo ===== */
+.logo {
+  color: #ff9900;
+  margin-bottom: 10px;
+}
+
+/* ===== Text ===== */
+.text {
+  font-size: 0.9rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* ===== Links ===== */
+.section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.section li {
+  margin-bottom: 8px;
+}
+
+.link {
+  text-decoration: none;
+  color: #ddd;
+  transition: all 0.2s;
+}
+
+.link:hover {
+  color: #ff9900;
+  padding-left: 5px;
+}
+
+/* ===== Newsletter ===== */
+.form {
+  display: flex;
+  margin-top: 10px;
+}
+
+.input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+.subscribeBtn {
+  background-color: #ff9900;
+  border: none;
+  padding: 10px 15px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+  transition: background 0.2s;
+}
+
+.subscribeBtn:hover {
+  background-color: #e68a00;
+}
+
+/* ===== Social Icons ===== */
+.socials {
+  display: flex;
+  gap: 15px;
+  font-size: 1.3rem;
+  margin-top: 10px;
+}
+
+.socials svg {
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.socials svg:hover {
+  transform: scale(1.2);
+  color: #ff9900;
+}
+
+/* ===== Bottom ===== */
+.bottom {
+  text-align: center;
+  padding: 15px;
+  background-color: #0f1111;
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .form {
+    flex-direction: column;
+  }
+
+  .input {
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+
+  .subscribeBtn {
+    border-radius: 4px;
+  }
+
+  .socials {
+    justify-content: center;
+  }
+}

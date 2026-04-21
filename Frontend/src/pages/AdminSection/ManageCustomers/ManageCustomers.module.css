@@ -1,0 +1,149 @@
+.container {
+  padding: 30px;
+  background: #f1f5f9; /* LIGHT BACKGROUND */
+  min-height: 100vh;
+  color: #0f172a;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* TITLE */
+.title {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #0f172a;
+}
+
+/* SEARCH */
+.searchForm {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.searchForm input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #cbd5f5;
+  background: #ffffff;
+  color: #0f172a;
+  outline: none;
+}
+
+.searchForm input::placeholder {
+  color: #94a3b8;
+}
+
+.searchForm button {
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.searchForm button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(59, 130, 246, 0.3);
+}
+
+/* FILTER TEXT */
+.filter {
+  margin-bottom: 20px;
+  color: #64748b00;
+}
+
+/* TABLE CARD */
+.table {
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* HEADER */
+.header {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 2fr;
+  padding: 14px;
+  background: #f8fafc;
+  color: #64748b;
+  font-weight: 600;
+  font-size: 14px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* ROW */
+.row {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 2fr;
+  padding: 14px;
+  align-items: center;
+  transition: 0.2s;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.row:hover {
+  background: #f9fafb;
+}
+
+/* STATUS */
+.active {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.blocked {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+/* ACTIONS */
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* BUTTONS */
+.deleteBtn {
+  background: #ef4444;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+.deleteBtn:hover {
+  background: #dc2626;
+}
+
+.blockBtn {
+  background: #f59e0b;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+.blockBtn:hover {
+  background: #d97706;
+}
+
+.unblockBtn {
+  background: #10b981;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+.unblockBtn:hover {
+  background: #059669;
+}

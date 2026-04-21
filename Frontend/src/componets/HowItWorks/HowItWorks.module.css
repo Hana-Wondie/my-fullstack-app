@@ -1,0 +1,86 @@
+/* ===== Container ===== */
+.container {
+  padding: 60px 20px;
+  background-color: #f3f3f3; /* Amazon light gray */
+  text-align: center;
+}
+
+/* ===== Title ===== */
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #131921;
+  margin-bottom: 40px;
+}
+
+/* ===== Steps Layout ===== */
+.steps {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+/* ===== Card ===== */
+.card {
+  background-color: #ffffff;
+  padding: 25px 20px;
+  border-radius: 8px;
+  width: 250px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* ===== Icon ===== */
+.icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+/* ===== Card Title ===== */
+.card h3 {
+  color: #131921;
+  margin-bottom: 10px;
+}
+
+/* ===== Card Text ===== */
+.card p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* ===== Button ===== */
+.button {
+  margin-top: 40px;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: #ff9900; /* Amazon orange */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.button:hover {
+  background-color: #e68a00;
+}
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 768px) {
+  .steps {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 320px;
+  }
+}

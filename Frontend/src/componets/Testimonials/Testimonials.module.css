@@ -1,0 +1,71 @@
+/* ===== Container ===== */
+.container {
+  padding: 60px 20px;
+  background-color: #f3f3f3; /* Amazon light gray */
+  text-align: center;
+}
+
+/* ===== Title ===== */
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #131921;
+  margin-bottom: 40px;
+}
+
+/* ===== Grid ===== */
+.grid {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+/* ===== Card ===== */
+.card {
+  background-color: #ffffff;
+  padding: 25px 20px;
+  border-radius: 8px;
+  width: 280px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* ===== Stars ===== */
+.stars {
+  color: #ff9900; /* Amazon orange */
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* ===== Review Text ===== */
+.review {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+/* ===== Name ===== */
+.name {
+  font-weight: bold;
+  color: #131921;
+}
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 768px) {
+  .grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 320px;
+  }
+}
