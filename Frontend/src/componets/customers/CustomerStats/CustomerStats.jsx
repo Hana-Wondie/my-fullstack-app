@@ -9,11 +9,21 @@ function CustomerStats() {
     categories: 0,
   });
 
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    // ✅ If no token → don't fetch
+    if (!token) {
+      setIsLoggedIn(false);
+      return;
+    }
+
+    setIsLoggedIn(true);
+
     const fetchStats = async () => {
       try {
-        const token = localStorage.getItem("token");
-
         const res = await axios.get(
           "http://localhost:3000/api/customer/stats",
           {
@@ -35,6 +45,9 @@ function CustomerStats() {
 
     fetchStats();
   }, []);
+
+  // ✅ Hide section for guests
+  if (!isLoggedIn) return null;
 
   return (
     <section className={styles.container}>

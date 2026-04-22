@@ -12,7 +12,7 @@ function CustomerDashboardHero() {
     navigate("/my-books");
   };
 
-  // Get user's name from localStorage
+  // Get user from localStorage
   let user = null;
   try {
     const userData = localStorage.getItem("user");
@@ -28,23 +28,29 @@ function CustomerDashboardHero() {
           <h1 className={styles.title}>
             Welcome{user ? `, ${user.name}` : ""}!
           </h1>
+
           <p className={styles.subtitle}>
-            Discover, read, and save your favorite books in one place.
+            Discover, read, and download books freely anytime.
           </p>
 
           <div className={styles.buttons}>
+            {/* ✅ ALWAYS AVAILABLE */}
             <button
               className={`${styles.btn} ${styles.browseBtn}`}
               onClick={handleBrowseBooks}
             >
               Browse Books
             </button>
-            <button
-              className={`${styles.btn} ${styles.myBooksBtn}`}
-              onClick={handleMyBooks}
-            >
-              My Books
-            </button>
+
+            {/* ✅ ONLY IF LOGGED IN */}
+            {user && (
+              <button
+                className={`${styles.btn} ${styles.myBooksBtn}`}
+                onClick={handleMyBooks}
+              >
+                My Books
+              </button>
+            )}
           </div>
         </div>
       </div>

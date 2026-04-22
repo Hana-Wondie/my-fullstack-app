@@ -6,9 +6,12 @@ import img from "../CarouselEffect/Images/images.js";
 
 function CarouselEffect() {
   const navigate = useNavigate();
+
+  // ✅ FIX: redirect to categories instead of login
   const buttonClicked = () => {
-    navigate("/login")
-  }
+    navigate("/browse-books"); // or "/books" depending on your route
+  };
+
   const slides = [
     {
       image: img[0],
@@ -47,6 +50,8 @@ function CarouselEffect() {
             <div className={classes.textBox}>
               <h2>{slide.title}</h2>
               <p>{slide.text}</p>
+
+              {/* ✅ PUBLIC ACCESS BUTTON */}
               <button onClick={buttonClicked}>Explore Now</button>
             </div>
           </div>

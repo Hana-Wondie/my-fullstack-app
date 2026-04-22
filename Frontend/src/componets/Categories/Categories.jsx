@@ -29,9 +29,9 @@ function Categories() {
           <div
             key={cat.id}
             className={styles.card}
-            onClick={() => navigate("/login")}
+            // ✅ FIX: go to books instead of login
+            onClick={() => navigate(`/books/${cat.id}`)}
           >
-            {/* FIXED IMAGE PATH */}
             <img
               src={
                 cat.image

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 function HowItWorks() {
   const navigate = useNavigate();
 
-  // ✅ Check user from localStorage
+  // Get user from localStorage
   let user = null;
   try {
     const userData = localStorage.getItem("user");
@@ -14,16 +14,12 @@ function HowItWorks() {
   }
 
   const handleGetStarted = () => {
-    if (!user) {
-      // Not logged in → go to login
-      navigate("/login");
+    // ✅ ADMIN → go to admin dashboard
+    if (user && (user.role === "admin" || user.role === "super_admin")) {
+      navigate("/admin/dashboard");
     } else {
-      // Logged in → go to dashboard based on role
-      if (user.role === "admin" || user.role === "super_admin") {
-        navigate("/admin/dashboard");
-      } else {
-        navigate("/customer/dashboard");
-      }
+      // ✅ EVERYONE ELSE (guest + users) → browse books
+      navigate("/browse-books"); // or "/categories"
     }
   };
 
@@ -35,26 +31,26 @@ function HowItWorks() {
         {/* Step 1 */}
         <div className={styles.card}>
           <div className={styles.icon}>📝</div>
-          <h3>Create Account</h3>
-          <p>Sign up easily with your name, email, and password.</p>
+          <h3>Create Account (Optional)</h3>
+          <p>You can sign up to save favorites and track your activity.</p>
         </div>
 
         {/* Step 2 */}
         <div className={styles.card}>
           <div className={styles.icon}>📚</div>
           <h3>Browse Books</h3>
-          <p>Explore categories and discover thousands of books.</p>
+          <p>Explore categories and discover thousands of books freely.</p>
         </div>
 
         {/* Step 3 */}
         <div className={styles.card}>
           <div className={styles.icon}>⬇️</div>
-          <h3>Download & Save</h3>
-          <p>Download books or add them to your favorites list.</p>
+          <h3>Read & Download</h3>
+          <p>Read online or download books instantly — no login required.</p>
         </div>
       </div>
 
-      {/* Get Started Button */}
+      {/* BUTTON */}
       <button className={styles.button} onClick={handleGetStarted}>
         Get Started
       </button>
