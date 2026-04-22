@@ -47,19 +47,21 @@ function ManageAdmins() {
   };
 
   const handleBlock = async (admin) => {
-    await axios.post(
-      `http://localhost:3000/api/admins/block/${admin.id}`,
-      { email: admin.email },
+    await axios.put(
+      `http://localhost:3000/api/admins/${admin.id}/block`,
+      { blocked: true },
       { headers: { Authorization: `Bearer ${token}` } },
     );
 
     fetchAdmins();
   };
 
-  const handleUnblock = async (email) => {
-    await axios.delete(`http://localhost:3000/api/admins/unblock/${email}`, {
-      headers: { Authorization: `Bearer ${token}` },
-    });
+  const handleUnblock = async (admin) => {
+    await axios.put(
+      `http://localhost:3000/api/admins/${admin.id}/block`,
+      { blocked: false },
+      { headers: { Authorization: `Bearer ${token}` } },
+    );
 
     fetchAdmins();
   };
@@ -118,7 +120,7 @@ function ManageAdmins() {
               {admin.blocked ? (
                 <button
                   className={styles.unblockBtn}
-                  onClick={() => handleUnblock(admin.email)}
+                  onClick={() => handleUnblock(admin)}
                 >
                   Unblock
                 </button>
