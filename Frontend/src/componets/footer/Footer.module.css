@@ -1,138 +1,180 @@
-/* ===== Footer ===== */
 .footer {
-  background: linear-gradient(to right, #131921, #232f3e);
-  color: white;
-  margin-top: 60px;
+  background: #0f172a;
+  color: #e5e7eb;
+  padding: 90px 20px 30px;
+  position: relative;
+  overflow: hidden;
 }
 
-/* ===== Container ===== */
+/* soft glow background */
+.footer::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+
+  background: radial-gradient(circle, rgba(201, 162, 39, 0.18), transparent 70%);
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: blur(60px);
+
+  z-index: 0;
+}
+
+/* ===== CONTAINER ===== */
 .container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 40px;
-  padding: 50px 20px;
+
   max-width: 1100px;
   margin: auto;
+
+  position: relative;
+  z-index: 1;
 }
 
-/* ===== Section ===== */
-.section {
-  flex: 1;
-  min-width: 220px;
+/* ===== SECTION ===== */
+.section h3 {
+  font-size: 16px;
+  margin-bottom: 16px;
+  color: #ffffff;
 }
 
-/* ===== Logo ===== */
-.logo {
-  color: #ff9900;
-  margin-bottom: 10px;
-}
-
-/* ===== Text ===== */
-.text {
-  font-size: 0.9rem;
-  color: #ccc;
-  line-height: 1.6;
-}
-
-/* ===== Links ===== */
 .section ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-.section li {
-  margin-bottom: 8px;
+.section ul li {
+  margin-bottom: 10px;
 }
 
+/* ===== LOGO ===== */
+.logo {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 12px;
+
+  color: #ffffff;
+}
+
+/* ===== TEXT ===== */
+.text {
+  font-size: 13px;
+  color: #9ca3af;
+  line-height: 1.6;
+}
+
+/* ===== LINKS ===== */
 .link {
+  color: #9ca3af;
   text-decoration: none;
-  color: #ddd;
-  transition: all 0.2s;
+
+  font-size: 14px;
+
+  transition: 0.3s ease;
 }
 
 .link:hover {
-  color: #ff9900;
-  padding-left: 5px;
+  color: #c9a227;
+  transform: translateX(4px);
 }
 
-/* ===== Newsletter ===== */
+/* ===== FORM ===== */
 .form {
   display: flex;
   margin-top: 10px;
+  gap: 10px;
 }
 
 .input {
   flex: 1;
-  padding: 10px;
-  border: none;
-  border-radius: 4px 0 0 4px;
+  padding: 10px 12px;
+
+  border-radius: 10px;
+  border: 1px solid #334155;
+
+  background: #1e293b;
+  color: white;
+
   outline: none;
 }
 
+.input:focus {
+  border-color: #c9a227;
+}
+
 .subscribeBtn {
-  background-color: #ff9900;
+  background: linear-gradient(135deg, #c9a227, #e5c35a);
   border: none;
-  padding: 10px 15px;
-  color: white;
-  font-weight: bold;
+
+  padding: 10px 14px;
+  border-radius: 10px;
+
+  font-weight: 600;
   cursor: pointer;
-  border-radius: 0 4px 4px 0;
-  transition: background 0.2s;
+
+  transition: 0.3s ease;
 }
 
 .subscribeBtn:hover {
-  background-color: #e68a00;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(201, 162, 39, 0.3);
 }
 
-/* ===== Social Icons ===== */
+/* ===== SOCIALS ===== */
 .socials {
   display: flex;
-  gap: 15px;
-  font-size: 1.3rem;
+  gap: 14px;
+
+  font-size: 18px;
+  color: #9ca3af;
+
   margin-top: 10px;
 }
 
 .socials svg {
   cursor: pointer;
-  transition: transform 0.2s, color 0.2s;
+  transition: 0.3s ease;
 }
 
 .socials svg:hover {
-  transform: scale(1.2);
-  color: #ff9900;
+  color: #c9a227;
+  transform: translateY(-3px);
 }
 
-/* ===== Bottom ===== */
+/* ===== BOTTOM ===== */
 .bottom {
   text-align: center;
-  padding: 15px;
-  background-color: #0f1111;
-  font-size: 0.85rem;
-  color: #aaa;
+  margin-top: 60px;
+
+  font-size: 12px;
+  color: #64748b;
+
+  border-top: 1px solid #1f2937;
+  padding-top: 20px;
+
+  position: relative;
+  z-index: 1;
 }
 
-/* ===== Responsive ===== */
-@media screen and (max-width: 768px) {
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
   .container {
-    flex-direction: column;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    grid-template-columns: 1fr;
     text-align: center;
   }
 
   .form {
     flex-direction: column;
-  }
-
-  .input {
-    border-radius: 4px;
-    margin-bottom: 10px;
-  }
-
-  .subscribeBtn {
-    border-radius: 4px;
-  }
-
-  .socials {
-    justify-content: center;
   }
 }

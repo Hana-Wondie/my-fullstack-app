@@ -1,67 +1,182 @@
-/* ===== Container ===== */
 .container {
-  padding: 70px 20px;
-  background: linear-gradient(to right, #131921, #232f3e);
-  color: white;
+  padding: 130px 20px;
   text-align: center;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
 }
 
-/* ===== Title ===== */
+/* background aura */
+.container::before {
+  content: "";
+  position: absolute;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 800px;
+  height: 800px;
+
+  background: radial-gradient(circle, rgba(201, 162, 39, 0.14), transparent 65%);
+  filter: blur(60px);
+
+  z-index: 0;
+}
+
+/* ===== TITLE ===== */
 .title {
-  font-size: 2.2rem;
-  font-weight: bold;
-  margin-bottom: 50px;
-  letter-spacing: 1px;
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: -1px;
+
+  color: #111827;
+  margin-bottom: 80px;
+
+  position: relative;
+  z-index: 1;
 }
 
-/* ===== Grid ===== */
+/* animated underline */
+.title::after {
+  content: "";
+  display: block;
+
+  width: 100px;
+  height: 4px;
+
+  margin: 16px auto 0;
+
+  border-radius: 999px;
+
+  background: linear-gradient(90deg, #c9a227, #e5c35a, #c9a227);
+  background-size: 200% 100%;
+}
+
+/* ===== GRID ===== */
 .grid {
   display: flex;
   justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
+  gap: 28px;
+
+  max-width: 1000px;
+  margin: 0 auto;
+
+  position: relative;
+  z-index: 1;
 }
 
-/* ===== Card ===== */
+/* ===== CARD ===== */
 .card {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(6px);
-  padding: 35px 45px;
-  border-radius: 12px;
-  min-width: 180px;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255,255,255,0.1);
+  flex: 1;
+
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+
+  border-radius: 20px;
+
+  padding: 50px 20px;
+
+  border: 1px solid rgba(0, 0, 0, 0.06);
+
+  position: relative;
+  overflow: hidden;
+
+  transition: all 0.35s ease;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* glowing top accent */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 120%;
+  height: 4px;
+
+  background: linear-gradient(90deg, transparent, #c9a227, transparent);
+
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+/* soft glow inside */
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(circle at top, rgba(201, 162, 39, 0.12), transparent 70%);
+
+  opacity: 0;
+  transition: 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+  transform: translateY(-14px) scale(1.03);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.12);
+  border-color: rgba(201, 162, 39, 0.35);
 }
 
-/* ===== Numbers ===== */
+.card:hover::before,
+.card:hover::after {
+  opacity: 1;
+}
+
+/* ===== NUMBER ===== */
 .card h3 {
-  font-size: 2.5rem;
-  color: #ff9900;
+  font-size: 42px;
+  font-weight: 900;
+
+  color: #c9a227;
+
   margin-bottom: 10px;
-  font-weight: bold;
+
+  letter-spacing: -1px;
+
+  transition: all 0.3s ease;
 }
 
-/* ===== Label ===== */
+/* number animation feel */
+.card:hover h3 {
+  transform: scale(1.12);
+}
+
+/* ===== LABEL ===== */
 .card p {
-  font-size: 1rem;
-  color: #ddd;
-  letter-spacing: 0.5px;
+  font-size: 14px;
+  color: #6b7280;
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
-/* ===== Responsive ===== */
-@media screen and (max-width: 768px) {
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
   .grid {
     flex-direction: column;
     align-items: center;
   }
 
   .card {
-    width: 85%;
-    max-width: 300px;
+    width: 100%;
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 32px;
+  }
+
+  .card h3 {
+    font-size: 34px;
+  }
+
+  .container {
+    padding: 100px 16px;
   }
 }

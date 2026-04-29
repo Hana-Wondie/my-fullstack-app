@@ -12,16 +12,15 @@ function Header() {
     navigate("/");
   };
 
-  // ✅ NEW: scroll handler
   const handleScroll = (id) => {
-    navigate("/"); // go to landing page first
+    navigate("/");
 
     setTimeout(() => {
       const section = document.getElementById(id);
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
       }
-    }, 100); // wait for page load
+    }, 100);
   };
 
   let user = null;
@@ -42,10 +41,37 @@ function Header() {
         }
         className={styles.logo}
       >
-        📚 Digital Library
+        {/* ✅ NEW SVG LOGO */}
+        <svg
+          className={styles.logoIcon}
+          viewBox="0 0 48 48"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8 10C8 8.9 8.9 8 10 8H22C24.2 8 26 9.8 26 12V40C26 37.8 24.2 36 22 36H10C8.9 36 8 35.1 8 34V10Z"
+            fill="#2563EB"
+          />
+          <path
+            d="M40 10C40 8.9 39.1 8 38 8H26C23.8 8 22 9.8 22 12V40C22 37.8 23.8 36 26 36H38C39.1 36 40 35.1 40 34V10Z"
+            fill="#1E40AF"
+          />
+          <line
+            x1="24"
+            y1="12"
+            x2="24"
+            y2="36"
+            stroke="white"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+          />
+        </svg>
+
+        <span className={styles.logoText}>
+          Digital<span>Library</span>
+        </span>
       </Link>
 
-      {/* Hamburger menu button */}
       <button
         className={`${styles.hamburger} ${menuOpen ? styles.open : ""}`}
         onClick={() => setMenuOpen(!menuOpen)}
@@ -57,7 +83,6 @@ function Header() {
       </button>
 
       <nav className={`${styles.nav} ${menuOpen ? styles.active : ""}`}>
-        {/* ✅ NEW LINKS (always visible) */}
         <Link
           to="#"
           className={styles.navLink}

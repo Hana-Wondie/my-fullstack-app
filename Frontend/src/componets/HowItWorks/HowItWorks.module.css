@@ -1,86 +1,184 @@
-/* ===== Container ===== */
+/* ===== MAIN SECTION ===== */
 .container {
-  padding: 60px 20px;
-  background-color: #f3f3f3; /* Amazon light gray */
+  padding: 100px 20px;
+  background: #ffffff;
   text-align: center;
+  position: relative;
+  
 }
 
-/* ===== Title ===== */
+/* subtle background accent */
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: radial-gradient(
+    circle at top,
+    rgba(201, 162, 39, 0.08),
+    transparent 60%
+  );
+
+  z-index: 0;
+}
+
+/* ===== TITLE ===== */
 .title {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #131921;
-  margin-bottom: 40px;
+  font-size: 38px;
+  font-weight: 800;
+  color: #111827;
+
+  margin-bottom: 70px;
+
+  letter-spacing: -0.8px;
+  position: relative;
+  z-index: 1;
 }
 
-/* ===== Steps Layout ===== */
+/* gold underline accent under title */
+.title::after {
+  content: "";
+  display: block;
+
+  width: 80px;
+  height: 3px;
+  background: #c9a227;
+
+  margin: 14px auto 0;
+  border-radius: 10px;
+}
+
+/* ===== STEPS GRID ===== */
 .steps {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+
+  max-width: 1100px;
+  margin: 0 auto 60px;
+
+  position: relative;
+  z-index: 1;
 }
 
-/* ===== Card ===== */
+/* ===== CARD ===== */
 .card {
-  background-color: #ffffff;
-  padding: 25px 20px;
-  border-radius: 8px;
-  width: 250px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: #ffffff;
+
+  padding: 36px 26px;
+  border-radius: 18px;
+
+  border: 3px solid #f3f4f6;
+
+  position: relative;
+
+  transition: all 0.35s ease;
+
+  overflow: hidden;
+}
+
+/* glowing border hover effect */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  border-radius: 18px;
+  padding: 1px;
+
+  background: linear-gradient(
+    135deg,
+    transparent,
+    rgba(201, 162, 39, 0.4),
+    transparent
+  );
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+
+  pointer-events: none;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  transform: translateY(-10px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
 }
 
-/* ===== Icon ===== */
+.card:hover::before {
+  opacity: 1;
+}
+
+/* ===== ICON ===== */
 .icon {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
+  font-size: 42px;
+  margin-bottom: 18px;
+
+  display: inline-block;
+  filter: drop-shadow(0 6px 12px rgba(201, 162, 39, 0.25));
 }
 
-/* ===== Card Title ===== */
+/* ===== CARD TITLE ===== */
 .card h3 {
-  color: #131921;
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+
   margin-bottom: 10px;
 }
 
-/* ===== Card Text ===== */
+/* ===== TEXT ===== */
 .card p {
-  color: #555;
-  font-size: 0.95rem;
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.7;
 }
 
-/* ===== Button ===== */
+/* ===== BUTTON ===== */
 .button {
-  margin-top: 40px;
-  padding: 12px 25px;
-  font-size: 1rem;
-  font-weight: bold;
-  color: white;
-  background-color: #ff9900; /* Amazon orange */
+  background: linear-gradient(135deg, #c9a227, #e5c35a);
+  color: #ffffff;
+
   border: none;
-  border-radius: 6px;
+
+  padding: 14px 34px;
+  border-radius: 999px;
+
+  font-size: 15px;
+  font-weight: 600;
+
   cursor: pointer;
-  transition: background 0.2s;
+
+  transition: all 0.3s ease;
+
+  position: relative;
+  z-index: 1;
 }
 
 .button:hover {
-  background-color: #e68a00;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(201, 162, 39, 0.35);
 }
 
-/* ===== Responsive ===== */
-@media screen and (max-width: 768px) {
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
   .steps {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .steps {
+    grid-template-columns: 1fr;
   }
 
-  .card {
-    width: 90%;
-    max-width: 320px;
+  .title {
+    font-size: 30px;
+  }
+
+  .container {
+    padding: 80px 16px;
   }
 }
